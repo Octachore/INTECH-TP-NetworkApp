@@ -3,8 +3,8 @@ import { Post } from 'models';
 import { PostService, PostSocketService, LoggedUser, MessageParser } from 'services';
 
 @Component({
-  selector: 'post',
-  templateUrl: 'post.html'
+    selector: 'post',
+    templateUrl: 'post.html'
 })
 export class PostComponent {
     @Input() post: Post;
@@ -21,4 +21,8 @@ export class PostComponent {
         this.post.content = this.parser.parse(this.post);
     }
 
+    like() {
+        this.post.liked = !this.post.liked;
+        this.postService.like(this.post);
+    }
 }

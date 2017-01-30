@@ -6,7 +6,7 @@
         {{ post.user.id === user.id ? 'Me' : post.user.username }}
     </div>
     <div class="right">
-        <div class="actions"><a [class.liked]="post.liked"><i class="glyphicon glyphicon-heart"></i></a></div>
+        <div class="actions"><a [class.liked]="post.liked" (click)="like()"><i class="glyphicon glyphicon-heart"></i></a></div>
     </div>
 </div>
 <div class="body">
