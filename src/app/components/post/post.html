@@ -25,6 +25,10 @@
 </div>
 <div class="footer">
     <p class="date">Posted on {{post.creationTime | date}}</p>
+    <input type="text">
+    <div class="comments">
+        <post-comment *ngFor="let comment of post.comments"></post-comment>
+    </div>
 </div>
 <style>
     :host {

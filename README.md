@@ -19,53 +19,53 @@
 
 #### Level I
 
-1. Faire le formulaire de login
-2. Rendre username et le mot de passe obligatoire
-3. Rediriger l'utilisateur sur /
+1. Faire le formulaire de login ----- DONE
+2. Rendre username et le mot de passe obligatoire ----- DONE
+3. Rediriger l'utilisateur sur / ----- DONE
 
 #### Level II
 
 4. Afficher les messages d'erreurs de validation pour chaque champs
-5. Afficher un message si le login à échoué
+5. Afficher un message si le login à échoué ----- DONE
 
 ### Register
 
 #### Level I
 
-1. Faire le formulaire pour l'ajout d'un user
-2. Rendre username et le mot de passe obligatoire
-3. En cas de succès, rediriger l'utilisateur sur /login
+1. Faire le formulaire pour l'ajout d'un user ----- DONE
+2. Rendre username et le mot de passe obligatoire ----- DONE
+3. En cas de succès, rediriger l'utilisateur sur /login ----- DONE
 
 #### Level II
 4. Afficher les messages d'erreurs de validation  pour chaque champs
-5. Gérer les username déjà utilisés
+5. Gérer les username déjà utilisés ----- DONE
 
 
 ### Channel
 
 #### Level I
 
-1. Afficher la liste des channels dans le menu
-2. Pouvoir créer un nouveau channel
-3. Naviguer sur un channel au clic dans le menu
+1. Afficher la liste des channels dans le menu ----- DONE
+2. Pouvoir créer un nouveau channel ----- DONE
+3. Naviguer sur un channel au clic dans le menu ----- DONE
 
 #### Level II
 
 4. Sélectionner par défaut le premier channel de la liste
-5. Ajouter ajouter les nouveaux channels dynamiquement
+5. Ajouter ajouter les nouveaux channels dynamiquement ----- DONE
 
-### Post 
+### Post
 
 ### Level I
 
-1. Afficher les postes reçues pour le channel courant
-2. Afficher l'auteur des messages
-3. Afficher la date du postes
-4. Insérer les nouveaux postes reçues via WebSocket
-5. Afficher une image si le message contient une url vers une image
-6. Afficher une video si le message contient une url vers une vidéo (https://www.html5rocks.com/en/tutorials/video/basics/devstories.mp4)
-7. Afficher le player de youtube si le message contient un lien youtube
-8. Ajouter le bouton like
+1. Afficher les postes reçues pour le channel courant ----- DONE
+2. Afficher l'auteur des messages ----- DONE
+3. Afficher la date du postes ----- DONE
+4. Insérer les nouveaux postes reçues via WebSocket ----- DONE
+5. Afficher une image si le message contient une url vers une image ----- DONE
+6. Afficher une video si le message contient une url vers une vidéo (https://www.html5rocks.com/en/tutorials/video/basics/devstories.mp4) ----- DONE
+7. Afficher le player de youtube si le message contient un lien youtube ----- DONE
+8. Ajouter le bouton like ----- DONE
 
 ### Level II
 9. Retirer les urls des messages parsés pour ne restituer que son contenu
@@ -78,14 +78,14 @@
 
 ### Level I
 1. Pouvoir commenter un postes
-2. Afficher les commentaires d'un poste 
+2. Afficher les commentaires d'un poste
 3. Afficher l'auteur du commentaires
 4. Insérer les nouveaux commentaires reçues via WebSocket
 
 ### Level II
 5. Parser les commentaires comme les postes : extraire les images, vidéos...
 
-### Activités et notifications 
+### Activités et notifications
 
 ### Level I
 1. Créer un NotificationService
@@ -102,7 +102,7 @@
 
 ### Level III
 10. utiliser [angular2-notifications](https://github.com/flauc/angular2-notifications) pour afficher des notifications avec chrome
-11. Si l'activité concerne un poste (nouveau poste, commentaire sur un poste, like d'un poste) rendre l'activité clicable. 
+11. Si l'activité concerne un poste (nouveau poste, commentaire sur un poste, like d'un poste) rendre l'activité clicable.
 Le clic doit rediriger sur le bon channel et scroller jusqu'au poste concerné
 
 
