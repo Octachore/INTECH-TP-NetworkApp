@@ -17,17 +17,20 @@ export class RegisterComponent {
 
     constructor(
         private registrationService: RegistrationService,
-        private router : Router
+        private router: Router
     ) { }
 
     register() {
         if (this.ngForm.form.invalid) {
             return;
         }
-        if(this.registrationService.usernameExists(this.model.userName)) {
-            this.message = 'Username already exists';
-            return;
-        }
-        return this.registrationService.register(this.model).then(() => this.router.navigateByUrl('/'), (reason) => this.message = reason);
+        return this.registrationService.usernameExists(this.model.username).then((result) => {
+            if (result) {
+                this.message = 'Username already exists';
+                return;
+            }
+            return this.registrationService.register(this.model).then(() => this.router.navigateByUrl('/login'), (err) => this.message = err);
+        },
+            (err) => this.message = err);
     }
 }

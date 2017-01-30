@@ -20,6 +20,6 @@ export class LoginComponent {
     }
 
     login() {
-        return this.authService.authenticate(this.model).then(() => this.router.navigateByUrl('/'), (reason) => this.message = reason);
+        return this.authService.authenticate(this.model).then(() => this.router.navigateByUrl('/'), (err) => this.message = err);
     }
 }
