@@ -12,7 +12,12 @@
 <div class="body">
     <pre class="message">{{post.message}}</pre>
     <div *ngIf="post.content">
-
+        <div *ngIf="post.content.type === 'picture'">
+            <picture-post-content [postContent]="post.content"></picture-post-content>
+        </div>
+        <div *ngIf="post.content.type === 'youtube'">
+            <youtube-post-content [postContent]="post.content"></youtube-post-content>
+        </div>
     </div>
 </div>
 <div class="footer">

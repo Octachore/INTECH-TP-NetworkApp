@@ -13,7 +13,7 @@ export class PostComponent {
         private postSocket: PostSocketService,
         private user: LoggedUser,
         private postService: PostService,
-        private parser: MessageParser
+        private parser: MessageParser,
     ) {
     }
 
