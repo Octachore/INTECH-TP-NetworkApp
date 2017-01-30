@@ -18,5 +18,7 @@ export class UserInputsComponent {
     }
 
     send() {
+        this.postervice.post(this.channelId, this.message);
+        this.message = '';
     }
 }

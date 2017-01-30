@@ -4,18 +4,25 @@ import { PostSocketService, PostService } from 'services';
 import { Post, PostContent } from 'models';
 
 @Component({
-  selector: 'social-feed', 
-  templateUrl: 'social-feed.html'
+    selector: 'social-feed',
+    templateUrl: 'social-feed.html'
 })
-export class SocialFeedComponent implements OnInit { 
+export class SocialFeedComponent implements OnInit {
     items: Post[] = [];
     channelId: string;
 
     constructor(
-        private postService: PostService, 
+        private postService: PostService,
         private postSocket: PostSocketService,
         private route: ActivatedRoute
-    ) {}
+    ) {
+        postSocket.onPost(()=> this.refresh());
+        this.refresh();
+    }
+
+    refresh() {
+        this.postService.getAll(this.channelId).then((posts) => this.items = posts);
+    }
 
     ngOnInit() {
         this.route.params
@@ -26,7 +33,7 @@ export class SocialFeedComponent implements OnInit {
                     .then((items) => {
                         this.items = items
                     });
-            } );
+            });
     }
-    
+
 }
