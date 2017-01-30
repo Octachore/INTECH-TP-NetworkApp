@@ -18,6 +18,9 @@
         <div *ngIf="post.content.type === 'youtube'">
             <youtube-post-content [postContent]="post.content"></youtube-post-content>
         </div>
+        <div *ngIf="post.content.type === 'video'">
+            <video src="{{post.content.value.mediaUrl}}" controls></video>
+        </div>
     </div>
 </div>
 <div class="footer">

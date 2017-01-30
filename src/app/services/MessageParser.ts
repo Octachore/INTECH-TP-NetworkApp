@@ -28,6 +28,9 @@ export class MessageParser {
         if (youtubeMatche) {
             content = new YoutubePostContent(youtubeMatche[2]);
         }
+        if(videoMatche) {
+            content = new VideoPostContent(videoMatche[0]);
+        }
 
         return content;
     }
