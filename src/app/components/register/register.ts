@@ -11,6 +11,7 @@ import { NgForm } from '@angular/forms';
 export class RegisterComponent {
     @ViewChild(NgForm)
     ngForm: NgForm;
+    message: string = '';
 
     model = new UserRegistration();
 
@@ -23,5 +24,10 @@ export class RegisterComponent {
         if (this.ngForm.form.invalid) {
             return;
         }
+        if(this.registrationService.usernameExists(this.model.userName)) {
+            this.message = 'Username already exists';
+            return;
+        }
+        return this.registrationService.register(this.model).then(() => this.router.navigateByUrl('/'), (reason) => this.message = reason);
     }
 }

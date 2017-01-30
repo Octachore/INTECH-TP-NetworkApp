@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserLogin } from 'models';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { AuthenticationService } from '../../services/index';
 
@@ -8,14 +9,17 @@ import { AuthenticationService } from '../../services/index';
     selector: 'login',
     templateUrl: 'login.html'
 })
-export class LoginComponent  {
+export class LoginComponent {
     model = new UserLogin();
+    message = '';
+
     constructor(
-            private authService: AuthenticationService,
-            private router : Router
-    ) { }
+        private authService: AuthenticationService,
+        private router: Router
+    ) {
+    }
 
     login() {
-        return this.authService.authenticate(this.model);
+        return this.authService.authenticate(this.model).then(() => this.router.navigateByUrl('/'), (reason) => this.message = reason);
     }
 }

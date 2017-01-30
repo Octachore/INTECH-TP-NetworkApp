@@ -1,5 +1,5 @@
 <h2>Register</h2>
-<form name="form" novalidate #f="ngForm">
+<form name="form" novalidate #f="ngForm" (ngSubmit)="register()">
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
         <label for="username">Username</label>
         <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
@@ -9,13 +9,20 @@
     <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
     </div>
     <div class="form-group">
-        <button [disabled]="loading" class="btn btn-primary">S'entegistrer</button>
+        <button [disabled]="loading" class="btn btn-primary" type="submit">S'enregistrer</button>
     </div>
 </form>
+<div class="msg">
+    {{message}}
+</div>
 <style>
     :host {
         display: block;
         background: white;
         padding: 20px;
+    }
+
+    .msg {
+        color: red;
     }
 </style>
