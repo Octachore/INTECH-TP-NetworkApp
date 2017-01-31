@@ -11,7 +11,7 @@ import { AuthenticationService } from '../../services/index';
 })
 export class LoginComponent {
     model = new UserLogin();
-    message = '';
+    message: any;
 
     constructor(
         private authService: AuthenticationService,

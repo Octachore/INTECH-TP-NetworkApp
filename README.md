@@ -89,12 +89,12 @@
 
 ### Level I
 1. Créer un NotificationService ----- DONE
-2. Lister les activités dans le menu à droite
-3. Ajouter une activté lors d'un nouveau poste via le NotificationService
-4. Ajouter une activté lors d'un commentaire sur un poste via le NotificationService
+2. Lister les activités dans le menu à droite ----- DONE
+3. Ajouter une activté lors d'un nouveau poste via le NotificationService ----- DONE
+4. Ajouter une activté lors d'un commentaire sur un poste via le NotificationService ----- DONE
 5. Ajouter une activté lorsqu'un membre se connecte via le NotificationService
-6. Ajouter une activité lors d'un like via le NotificationService
-7. Ajouter une activité lors de l'ajout d'un channel via le NotificationService
+6. Ajouter une activité lors d'un like via le NotificationService ----- DONE
+7. Ajouter une activité lors de l'ajout d'un channel via le NotificationService ----- DONE
 
 ### Level II
 8. Afficher une popup de notification avec [angular2-notifications](https://github.com/flauc/angular2-notifications)

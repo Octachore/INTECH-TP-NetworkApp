@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NotificationSocketService } from '../../services/NotificationSocketService';
-import { Post, Comment, User, Channel } from '../../models/models';
+import { Post, Comment, User, Channel, Like } from '../../models/models';
 
 @Component({
     selector: 'user-list',
@@ -18,9 +18,13 @@ export class UserListComponent implements OnInit {
 
     format(activity) {
         if (!activity) return 'NOACTIVITY!';
-        if (activity.hasOwnProperty('post')) {
+        if (activity.hasOwnProperty('post') && activity.hasOwnProperty('creationTime') && !activity.hasOwnProperty('liked')) {
+            let like = <Like>activity;
+            return `New like by ${like.user.username}`;
+        }
+        else if (activity.hasOwnProperty('post')) {
             let comment = <Comment>activity;
-            return `New comment by <b>${comment.user.username}</b> on post by ${comment.post.user.username}`;
+            return `New comment by ${comment.user.username} on post by ${comment.post.user.username}`;
         }
         else if (activity.hasOwnProperty('user')) {
             let post = <Post>activity;
