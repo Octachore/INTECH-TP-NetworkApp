@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NotificationSocketService } from '../../services/NotificationSocketService';
 import { Post, Comment, User, Channel, Like } from '../../models/models';
+declare var Notification: any;
 
 @Component({
     selector: 'user-list',
@@ -11,7 +12,9 @@ export class UserListComponent implements OnInit {
 
     constructor(private notificationSocketService: NotificationSocketService) {
         notificationSocketService.onNewActivity((activity) => {
-            this.notifs.push(this.format(activity));
+            const notif = this.format(activity);
+            this.notify(notif);
+            this.notifs.push(notif);
             localStorage.setItem('activities', JSON.stringify(this.notifs));
         });
     }
@@ -43,5 +46,24 @@ export class UserListComponent implements OnInit {
         }
     }
 
+
+
     ngOnInit() { }
+
+    notify(message) {
+        let notification;
+        if (!("Notification" in window)) {
+            alert("This browser does not support desktop notification");
+        }
+        else if (Notification.permission === "granted") {
+            notification = new Notification(message);
+        }
+        else if (Notification.permission !== 'denied') {
+            Notification.requestPermission(function (permission) {
+                if (permission === "granted") {
+                    notification = new Notification(message);
+                }
+            });
+        }
+    }
 }
