@@ -1,4 +1,9 @@
-<div class="item"></div>
+<div class="item">
+    <div *ngFor="let notif of notifs; let i = index;">
+        #{{ i }} : {{ notif }}
+        <br>
+    </div>
+</div>
 <style>
     :host {
         display: block;

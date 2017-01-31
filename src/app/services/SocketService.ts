@@ -12,13 +12,13 @@ export class SocketService {
     constructor( config: ServerConfiguration, zone:NgZone ){
         this.url = config.url;
         this.zone = zone;
-        
+
         this.socket = io(this.url);
         this.connect = new Promise<SocketIOClient.Socket>((resolve, reject)=>{
             this.socket.on('connect', function(){
                 resolve(this.socket);
             });
-        }); 
+        });
 
     }
 

@@ -88,7 +88,7 @@
 ### Activités et notifications
 
 ### Level I
-1. Créer un NotificationService
+1. Créer un NotificationService ----- DONE
 2. Lister les activités dans le menu à droite
 3. Ajouter une activté lors d'un nouveau poste via le NotificationService
 4. Ajouter une activté lors d'un commentaire sur un poste via le NotificationService
