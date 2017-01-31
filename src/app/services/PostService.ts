@@ -7,10 +7,10 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class PostService {
-    
+
     constructor(
-        private http: AuthenticatedHttp, 
-        private user: LoggedUser, 
+        private http: AuthenticatedHttp,
+        private user: LoggedUser,
         private config: ServerConfiguration
     ) { }
 
@@ -37,10 +37,10 @@ export class PostService {
             .post(`${this.config.url}/api/post/${post.id}/like`, {id: post.id})
             .toPromise();
     }
-    
+
     comment(post: Post, message: string): Promise<any> {
-        post.user = this.user;
-        
+        // post.user = this.user;
+
         return this.http
             .post(`${this.config.url}/api/post/${post.id}/comment`, {message})
             .map( r => r.json())

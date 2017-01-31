@@ -6,4 +6,5 @@ import { Comment } from 'models';
     selector: 'post-comment'
 })
 export class PostCommentComponent{
+    @Input() comment: Comment
 }

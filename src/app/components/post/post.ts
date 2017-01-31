@@ -8,6 +8,8 @@ import { PostService, PostSocketService, LoggedUser, MessageParser } from 'servi
 })
 export class PostComponent {
     @Input() post: Post;
+    @Input() isComment: boolean = false;
+    showComments: boolean = false;
 
     constructor(
         private postSocket: PostSocketService,
@@ -15,6 +17,10 @@ export class PostComponent {
         private postService: PostService,
         private parser: MessageParser,
     ) {
+        postSocket.onComment((comment) => {
+            if(!Array.isArray(this.post.comments)) this.post.comments = [];
+            this.post.comments.push(comment);
+        });
     }
 
     ngOnInit() {

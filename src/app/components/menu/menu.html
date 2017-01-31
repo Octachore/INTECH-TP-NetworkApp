@@ -1,7 +1,7 @@
 <nav class="list-group">
     <add-channel></add-channel>
     <!-- itérer et fournir l'id -->
-    <a *ngFor="let channel of channels"  class="list-group-item" [routerLink]="[ '/channel/' + channel.id  ]" >
+    <a *ngFor="let channel of channels"  class="list-group-item" [routerLink]="[ '/channel/' + channel.id  ]" routerLinkActive="active" >
         <span class="channel-name">{{ channel.name }}</span>
     </a>
 </nav>
@@ -16,9 +16,5 @@
     .channel-name {
         font-size: 16px;
         font-weight: bold;
-    }
-
-    .active {
-        color: blue;
     }
 </style>

@@ -25,9 +25,12 @@
 </div>
 <div class="footer">
     <p class="date">Posted on {{post.creationTime | date}}</p>
-    <input type="text">
-    <div class="comments">
-        <post-comment *ngFor="let comment of post.comments"></post-comment>
+    <div *ngIf="!isComment">
+        <button class="toggle-comments btn btn-default btn-xs" (click)="showComments = !showComments">{{ showComments ? 'Hide' : 'Show' }} comments section ({{ post.comments !== undefined ? post.comments.length : 0 }} comment{{ post.comments !== undefined ? (post.comments?.length === 1 ? '' : 's') : 's' }})</button>
+        <div class="comments" *ngIf="showComments">
+            <post-comment *ngFor="let comment of post.comments" [comment]="comment"></post-comment>
+            <user-inputs [post]="post"></user-inputs>
+        </div>
     </div>
 </div>
 <style>
@@ -37,6 +40,9 @@
         border-radius: 4px;
         border: 1px solid #d8d8d8;
         margin-top: 20px;
+    }
+    .toggle-comments{
+        margin-bottom: 5px;
     }
     .footer {
         border-top: solid 1px grey;
