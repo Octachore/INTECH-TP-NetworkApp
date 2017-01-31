@@ -51,7 +51,7 @@
 
 #### Level II
 
-4. Sélectionner par défaut le premier channel de la liste
+4. Sélectionner par défaut le premier channel de la liste ----- DONE
 5. Ajouter ajouter les nouveaux channels dynamiquement ----- DONE
 
 ### Post
@@ -98,7 +98,7 @@
 
 ### Level II
 8. Afficher une popup de notification avec [angular2-notifications](https://github.com/flauc/angular2-notifications)
-9. Persister les activités dans le [localStorage](https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage)
+9. Persister les activités dans le [localStorage](https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage) ----- DONE
 
 ### Level III
 10. utiliser [angular2-notifications](https://github.com/flauc/angular2-notifications) pour afficher des notifications avec chrome

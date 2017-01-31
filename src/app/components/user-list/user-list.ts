@@ -11,8 +11,8 @@ export class UserListComponent implements OnInit {
 
     constructor(private notificationSocketService: NotificationSocketService) {
         notificationSocketService.onNewActivity((activity) => {
-            console.log(this.format(activity));
             this.notifs.push(this.format(activity));
+            localStorage.setItem('activities', JSON.stringify(this.notifs));
         });
     }
 
