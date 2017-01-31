@@ -77,13 +77,13 @@
 ### Commentaires
 
 ### Level I
-1. Pouvoir commenter un postes
-2. Afficher les commentaires d'un poste
-3. Afficher l'auteur du commentaires
-4. Insérer les nouveaux commentaires reçues via WebSocket
+1. Pouvoir commenter un postes ----- DONE
+2. Afficher les commentaires d'un poste ----- DONE
+3. Afficher l'auteur du commentaires ----- DONE
+4. Insérer les nouveaux commentaires reçues via WebSocket ----- DONE
 
 ### Level II
-5. Parser les commentaires comme les postes : extraire les images, vidéos...
+5. Parser les commentaires comme les postes : extraire les images, vidéos... ----- DONE
 
 ### Activités et notifications
 

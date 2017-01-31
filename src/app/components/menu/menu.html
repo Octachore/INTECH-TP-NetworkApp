@@ -1,7 +1,13 @@
 <nav class="list-group">
+    <div class="notif" [ngClass]="{zero: counter === 0}" (click)="counter = 0">
+        <button class="btn btn-default btn-link">
+            <span class="glyphicon glyphicon-comment"></span>
+        </button>
+        <span class="badge badge-notify">{{ counter }}</span>
+    </div>
     <add-channel></add-channel>
     <!-- itérer et fournir l'id -->
-    <a *ngFor="let channel of channels"  class="list-group-item" [routerLink]="[ '/channel/' + channel.id  ]" routerLinkActive="active" >
+    <a *ngFor="let channel of channels" class="list-group-item" [routerLink]="[ '/channel/' + channel.id  ]" routerLinkActive="active">
         <span class="channel-name">{{ channel.name }}</span>
     </a>
 </nav>
@@ -13,8 +19,31 @@
         margin: 0;
     }
 
+    .notif {
+        margin-left: 30px;
+    }
+
+    .notif button {
+        font-size: 30px;
+    }
+
+    .zero.notif button span {
+        color: lightgrey;
+    }
+
     .channel-name {
         font-size: 16px;
         font-weight: bold;
+    }
+
+    .badge-notify{
+        background:red;
+        position:relative;
+        top: -15px;
+        left: -35px;
+    }
+
+    .zero .badge-notify {
+        background: green;
     }
 </style>

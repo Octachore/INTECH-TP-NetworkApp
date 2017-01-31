@@ -28,17 +28,18 @@ import { authenticatedHttpFactory } from './services/AuthenticatedHttp'
     AUTH_PROVIDERS,
     services.AuthGuard,
     services.UserStorageService,
-    services.SocketService, { 
+    services.SocketService, {
       provide: services.ServerConfiguration,
-      useValue: new services.ServerConfiguration() 
+      useValue: new services.ServerConfiguration()
     },
     services.ChannelService,
     services.PostService,
     services.PostSocketService,
     services.MessageParser,
     services.AuthenticationService,
-    { 
-      provide: services.LoggedUser, 
+    services.NotificationSocketService,
+    {
+      provide: services.LoggedUser,
       useFactory: (auth: services.AuthenticationService) => auth.user ,
       deps: [services.AuthenticationService]
     },
